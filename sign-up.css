@@ -1,0 +1,27 @@
+body{
+    background-color: rgba(0, 0, 255, 0.3);
+}
+form{
+    margin: 8% 20% 8% 20%;
+    padding: 20px 10px 20px 10px;
+    border: 2px solid rgba(0, 0, 255, 0.7);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 255, 0.6);
+}
+label
+{
+    font-family: 'raleway','sans-serif';
+}
+#agreement
+{
+    color: black; 
+    background-color:white;
+    margin: 0px;
+    border-radius:0px 5px 5px 0px;
+    margin-left:5px ;
+    padding:0px 10px 0px 10px ;
+}
+.mysubmit-btn
+{
+    border-radius: 10px !important;
+}

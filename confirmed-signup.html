@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block title %}  sign-up {% endblock%}
+
+{% block stylesheet %}
+
+  <link rel="stylesheet" href="sign-up.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap">
+
+  {% endblock %}
+{% block js %}
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+
+{% block body %}
+
+  <form>
+    <div class="row">    
+        <div class="form-group col">
+            <label for="first-name">First name</label>
+            <input type="text" class="form-control" name="first-name" id="first-name" placeholder="alex"
+            pattern="[A-Za-z]+" minlength="3" maxlength="30"  required>
+        </div>
+        <div class="form-group col">
+            <label for="last-name">Last name</label>
+            <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Groot" 
+            pattern="[A-Za-z]+" minlength="3" maxlength="30" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="donor-phone-number">Cellphone number</label>
+            <input type="number" class="form-control" name="email" id="donor-phone-number" aria-describedby="emailHelp" 
+            placeholder="03XXXXXXXXX"  pattern="[0-9]{11}">
+        </div>
+        <div class="form-group col">
+                <label for="birthdate">birthdate</label>
+                <input type="date" class="form-control" name="birthdate" id="bday" aria-describedby="emailHelp" 
+                placeholder="yyyy-mm-dd"  pattern="[0-9]{10}" max="2002-02-01" required>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="input-group mb-3 col">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="Gender">Gender</label>
+                </div>
+                <select class="custom-select" name="Gender" id="Gender">
+                    <option selected>Choose...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+        </div>
+        <div class="input-group mb-3 col">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="blood-group">Blood type</label>
+            </div>
+            <select class="custom-select" name="blood-group"  id="blood-group">
+                <option selected>Choose...</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">    
+        <div class="form-group col">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" id="city" placeholder="Lahore"
+            pattern="[A-Za-z]+" minlength="3" maxlength="30" required>
+        </div>
+        <div class="form-group col">
+            <label for="province">Province</label>
+            <input type="text" class="form-control" name="province" id="province" placeholder="Punjab" 
+            pattern="[A-Za-z]+" minlength="3" maxlength="30" required>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+       placeholder="Enter email" onclick="document.getElementById('emailHelp').innerHTML = 'enter the same email as before.'" required>
+       <p id="emailHelp"></p>
+    </div>
+    <div class="form-group">
+        <label for="donor-password">Password</label>
+        <input type="password" class="form-control" name="password" id="donor-password" 
+         pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  title="Password must have UpperCase, LowerCase, Number/SpecialChar and min 8 Chars"   placeholder="Password" aria-describedby="password" 
+         onclick="document.getElementById('password').innerHTML = 'password must 8 characters long.'">
+        <p id="password"></p>
+    </div>
+    <div class="form-group">
+        <label for="retype-password">Retype Password</label>
+        <input type="password" class="form-control" name="rtpassword" id="rtpassword" 
+         pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  title="Password must have UpperCase, LowerCase, Number/SpecialChar and min 8 Chars"
+          onblur="check()"  placeholder="Password" aria-describedby="password" >
+        <p id="rt-password"></p>
+        
+    </div>
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <input type="checkbox" id="agreement" aria-label="Checkbox for following text input" required>
+              </div>
+            </div>
+            <p  id="agreement" class="form-text text-muted">The info I have provided is uptodate and accurate.</p>
+    </div>
+    <button id="form-btn" type="submit" class="btn btn-primary mysubmit-btn">Submit</button>
+  </form>
+  <script>
+    function check()
+    {
+      var passwd= document.getElementById('donor-password');
+      var rtpasswd = document.getElementById('rtpassword');
+      
+      if(passwd != rtpasswd)
+      {
+          document.getElementById('rt-password').innerHTML = "passwords do not match";
+          
+      }
+      else{
+        document.getElementById('rt-password').innerHTML = "passwords matched";
+          
+      }
+      
+    }
+  </script>
+ 
+  {% endblock %}
